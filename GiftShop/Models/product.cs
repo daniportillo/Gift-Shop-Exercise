@@ -14,12 +14,11 @@ namespace GiftShop.Models
     
     public partial class product
     {
-        public int id { get; set; }
+        public int ID { get; set; }
         public string name { get; set; }
-        public string sku { get; set; }
         public string description { get; set; }
         public string category { get; set; }
-        public int stock { get; set; }
+        public int quantity { get; set; }
         public byte[] image { get; set; }
         public decimal price { get; set; }
     }
