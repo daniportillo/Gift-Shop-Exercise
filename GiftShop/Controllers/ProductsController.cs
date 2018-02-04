@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace GiftShop.Controllers
 {
-    public class HomeController : Controller
+    public class ProductsController : Controller
     {
+        // GET: Products
         public ActionResult Index()
-        {
-            ViewBag.Title = "Home Page";
-
-            return View();
-        }
-        public ActionResult RoutePart()
         {
             return View();
         }

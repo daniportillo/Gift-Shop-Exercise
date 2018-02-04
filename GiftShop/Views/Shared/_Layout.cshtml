@@ -8,6 +8,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angular")
+
 </head>
 <body>
     <!-- Top navbar-->
@@ -36,17 +37,21 @@
                 <li class="nav-link">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                 <li class="nav-link">@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 <li class="nav-link">@Html.ActionLink("Sign In", "Index", "Help", new { area = "" }, null)</li>
+                <li class="nav-link"><a href="#!/products">Management</a></li>
                 <li class="nav-link">@Html.ActionLink("Cart", "Index", "Help", new { area = "" }, null)</li>
+
             </ul>
             <span class="navbar-text">
 
             </span>
         </div>
     </nav>
-    <div class="">
+    <div>
+        <ng-view></ng-view>
         @RenderBody()
         <hr />
     </div>
+
 
     <footer>
         <p>&copy; @DateTime.Now.Year - Gift Shop</p>
@@ -55,11 +60,14 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/myApp.js"></script>
+    <script src="~/Scripts/productController.js"></script>
     <script>
         $(document).ready(function () {
             $('.carousel').carousel()
         });
     </script>
+
     @RenderSection("scripts", required: false)
 
 
