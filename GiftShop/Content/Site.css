@@ -8,6 +8,14 @@ body{
     background-color: #f7f5f5;
 }
 
+.btn-empty{
+    border: none;
+    padding: 0;
+    background: none;
+}
+.btn-empty:hover{
+    color: #25C2CE;
+}
 /** 
 ------------Navbar CSS------------------*/
 .navbar-giftShop {
@@ -47,10 +55,11 @@ body{
     transition: color 0.2s ease-in;
 }
 
-.nav > li > a:hover, .nav > li > a:focus {
+#navbarText > ul > li > a:hover {
     background-color: transparent;
     color: #25C2CE;
     font-weight: 600;
+    text-decoration: none;
 }
 .navbar-nav li a {
     color: #666666;

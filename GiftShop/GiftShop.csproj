@@ -199,9 +199,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -224,23 +224,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>productModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.Context.cs">
+    <Compile Include="Models\user.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>User.Context.tt</DependentUpon>
+      <DependentUpon>user.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs">
-      <DependentUpon>User.tt</DependentUpon>
+      <DependentUpon>user.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\userModel.Designer.cs">
+    <Compile Include="Models\user.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>userModel.edmx</DependentUpon>
+      <DependentUpon>user.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\User1.cs">
+    <Compile Include="Models\user1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>User.tt</DependentUpon>
+      <DependentUpon>user.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -285,15 +285,15 @@
       <DependentUpon>productModel.edmx</DependentUpon>
       <LastGenOutput>productModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\User.Context.tt">
+    <Content Include="Models\user.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>userModel.edmx</DependentUpon>
-      <LastGenOutput>User.Context.cs</LastGenOutput>
+      <DependentUpon>user.edmx</DependentUpon>
+      <LastGenOutput>user.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\User.tt">
+    <Content Include="Models\user.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>userModel.edmx</DependentUpon>
-      <LastGenOutput>User1.cs</LastGenOutput>
+      <DependentUpon>user.edmx</DependentUpon>
+      <LastGenOutput>user1.cs</LastGenOutput>
     </Content>
     <Content Include="Products\delete.html" />
     <Content Include="Products\edit.html" />
@@ -406,7 +406,6 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Controllers\controller.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -1181,22 +1180,24 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Models\userModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>userModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\userModel.edmx.diagram">
-      <DependentUpon>userModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\angular-file-upload.min.js.map" />
     <Content Include="Scripts\angular-file-upload.js.map" />
     <Content Include="Scripts\angular-local-storage.min.js.map" />
+    <EntityDeploy Include="Models\user.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>user.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\user.edmx.diagram">
+      <DependentUpon>user.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ngStorage.js" />
+    <Content Include="Scripts\ngStorage.min.js" />
     <Content Include="Scripts\plugins\piexif.js" />
     <Content Include="Scripts\plugins\piexif.min.js" />
     <Content Include="Scripts\plugins\purify.js" />
@@ -1241,6 +1242,7 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\Management.cshtml" />
     <Content Include="Views\Home\Product.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

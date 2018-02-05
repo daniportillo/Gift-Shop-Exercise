@@ -12,9 +12,19 @@ namespace GiftShop.Controllers
         {
             return View();
         }
-        public ActionResult Management()
+        public ActionResult  Management()
         {
+            /*if (Session["role"].ToString() == "admin")
+            {
+                
+            }*/
+            
+               // return RedirectToAction("Login", "Login");
+
             return View();
+
+
+
         }
     }
 }

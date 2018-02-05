@@ -13,10 +13,10 @@ namespace GiftShop.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class gift_shopEntities5 : DbContext
+    public partial class userEntity : DbContext
     {
-        public gift_shopEntities5()
-            : base("name=gift_shopEntities5")
+        public userEntity()
+            : base("name=userEntity")
         {
         }
     

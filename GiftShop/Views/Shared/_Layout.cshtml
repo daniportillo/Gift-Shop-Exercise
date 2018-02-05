@@ -11,10 +11,8 @@
     @Scripts.Render("~/bundles/jquery")
     <link href="~/Content/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-fileinput/css/fileinput-rtl.min.css" rel="stylesheet" />
-    <script >
-    //    jQuery to collapse the navbar on scroll
-       
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+
 
 </head>
 <body>
@@ -42,8 +40,17 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-link">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                
+ 
+         
+                    <li class="nav-link">@Html.ActionLink("Login", "Login", "Login", new { area = "" }, null)</li>
+                
+                
+
                 <li class="nav-link">@Html.ActionLink("Products", "Management", "Products", new { area = "" }, null)</li>
-                <li class="nav-link">@Html.ActionLink("Cart", "Index", "Help", new { area = "" }, null)</li>
+                
+
+                <li class="nav-link"><button ng-click="" class="btn btn-empty"><span class="fa fa-shopping-cart" style="font-size: 1.5em"></span></button></li>
 
             </ul>
             <span class="navbar-text">
