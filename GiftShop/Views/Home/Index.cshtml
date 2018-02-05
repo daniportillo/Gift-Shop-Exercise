@@ -96,7 +96,7 @@
             <div class="row d-flex flex-wrap justify-content-center">
                 <div class="card animate-repeat" ng-repeat="product in Products| filter:query | orderBy: '-ID' | filter :sortCategory">
                     <a href="/product-details/{{product.ID}}">
-                        <img class="card-img-top img-responsive" src="data:image/gif;base64,{{product.image}}" alt="{{ product.name }}">
+                        <img class="card-img-top img-responsive" src="data:image/*;base64,{{product.image}}" alt="{{ product.name }}">
                         <div class="card-body">
                             <p class="card-text">{{ product.name }}</p>
                             <div class="card-bottom d-flex">
@@ -112,10 +112,4 @@
     </d iv>
 
 </section>
-
-<script>
-    $(document).ready(function () {
-        $('.carousel').carousel();
-    });
-</script>
 

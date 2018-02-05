@@ -38,20 +38,18 @@
         // Funtion for delete a product
         $scope.delete = function ($id) {
             $scope.idProduct = $id;
-            console.log('delete fun');
-            console.log($id);
             
-            console.log('asdddddddddddda');
         };
 
         $scope.confirmDelete = function () {
             $http.delete('/api/product/' + $scope.idProduct).then(successDelCallback, errorCallback);
-            $location.path('/list'); 
+           // $location.reload();
+            $location.path('#!/list');
         }
 
         //CallBacks
         function successDelCallback(response) {
-            
+            console.log(response);
 
         }
         function successCallback(response) {
