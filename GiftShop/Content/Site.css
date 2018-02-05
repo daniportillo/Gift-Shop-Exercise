@@ -15,6 +15,10 @@ body{
     height: 80px;
     margin-bottom: 0;
     z-index: 100;
+    -webkit-transition: position 3s linear;
+    -moz-transition: position 3s linear;
+    -o-transition: position 3s linear;
+    transition: position 3s linear;
 }
 
 .navbar-brand {
