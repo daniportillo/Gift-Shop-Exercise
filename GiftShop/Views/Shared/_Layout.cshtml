@@ -8,7 +8,9 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angular")
-
+    @Scripts.Render("~/bundles/jquery")
+    <link href="~/Content/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-fileinput/css/fileinput-rtl.min.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Top navbar-->
@@ -35,7 +37,6 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-link">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                <li class="nav-link">@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 <li class="nav-link">@Html.ActionLink("Products", "Management", "Products", new { area = "" }, null)</li>
                 <li class="nav-link">@Html.ActionLink("Cart", "Index", "Help", new { area = "" }, null)</li>
 
@@ -57,16 +58,20 @@
     </footer>
 
 
-    @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/myApp.js"></script>
     <script src="~/Scripts/productController.js"></script>
+    <script src="~/Scripts/fileinput.min.js"></script>
+
+
     <script>
         $(document).ready(function () {
-            $('.carousel').carousel()
+            $('.carousel').carousel();
+            $("#file-image").fileinput();
         });
+       
     </script>
-
     @RenderSection("scripts", required: false)
 
 

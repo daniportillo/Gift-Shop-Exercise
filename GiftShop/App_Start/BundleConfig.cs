@@ -26,7 +26,9 @@ namespace GiftShop
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                       "~/Scripts/angular.js",
-                      "~/Scripts/angular-route.js"));
+                      "~/Scripts/angular-route.js",
+                      "~/Scripts/angular-file-upload.js",
+                      "~/Scripts/angular-local-storage.js"));
 
         }
     }

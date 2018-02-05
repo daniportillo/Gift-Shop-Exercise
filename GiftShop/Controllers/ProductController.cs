@@ -56,6 +56,7 @@ namespace GiftShop.Controllers
 
         /* Delete a product */
         [HttpDelete]
+        [Route("{id}")]
         public void deleteProduct(int id)
         {
             giftEntities.products.Remove(giftEntities.products.Find(id));

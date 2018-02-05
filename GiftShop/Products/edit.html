@@ -1,37 +1,68 @@
 ﻿<div class="container">
-
     <!-- Edit form -->
-    <div class="row">
-        <form role="form">
-            <div class="row">
-                <div class="alert alert-danger" role="alert">
-                    {{error}}
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" ng-model="name">
-            </div>
-            <div class="form-group">
-                <label for="">Description</label>
-                <textarea class="form-control" name="description" ng-model="description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" class="form-control" id="category" name="category" ng-model="category">
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" class="form-control" id="quantity" name="quantity" ng-model="quantity">
-            </div>
-            <div class="form-group">
-                <label for="image">Image</label>
-                <input type="file" class="form-control-file" id="image" name="image" ng-model="image">
-            </div>
-            <div class="row">
-                <a href="#/list" class="btn btn-outline-secondary">Back</a>
-                <button type="submit" class="btn-btn-outline-info" ng-click="save()">Submit</button>
-            </div>
-        </form>
+    <div class="row d-flex justify-content-center ">
+        <div class="card w-60 mt-4">
+            <div class="card-body">
+                <!-- Form product-->
+                <form class="w-100" name="productForm" ng-submit="subimtForm(productForm.$valid)" novalidate>
+                    <div class="row text-center">
+                        <h3 class="w-100">
+                            {{ title }}
+                        </h3>
+                    </div>
+                    <div class="form-row">
+                        <div class="alert alert-danger" role="alert" ng-if="error">
+                            {{error}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" ng-model="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea class="form-control" name="description" ng-model="description" required></textarea>
+                    </div>
+                    <div class="">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="category">Category</label>
+                                <select class="custom-select mr-sm-5" id="category" ng-model="category" required>
+                                    <option value="" selected>Choose category</option>
+                                    <option value="Accesories">Accesories</option>
+                                    <option value="Clothes">Clothes</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Kitche">Kitchen</option>
+                                    <option value="Toys">Toys</option>
+                                    <option value="Pillow">Pillows</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="price">Price</label>
+                                <input type="number" min="1" class="form-control" id="price" name="price" ng-model="price" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" class="form-control" id="quantity" name="quantity" ng-model="quantity" required>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <img class="img-list img-responsive" src="data:image/*;base64,{{image}}">
+                                <input id="ile-image" type="file" class="file" data-preview-file-type="text" name="image" ng-model="image">
+         
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex justify-content-end">
+                        <a href="#/list" class="btn btn-outline-secondary">Back</a>&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-outline-info" ng-disabled="productForm.$invalid" ng-click="save()">Submit</button>
+                    </div>
+                </form>
+            </div>                 
+        </div>
     </div>
 </div>

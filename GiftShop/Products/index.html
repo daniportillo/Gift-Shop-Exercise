@@ -28,7 +28,10 @@
                     <td>${{item.price}} USD</td>
                     <td>
                         <a href="#!/edit/{{item.ID}}" class=""><span class="fa fa-edit"></span></a>
-                        <a href="/delete/{{item.ID}}" class=""><span class="fa fa-trash-o"></span></a>
+                        <button type="button" class="btn btn-link" ng-click="delete(item.ID)" data-toggle="modal" data-target="#delete"  style="padding:0; margin-top: -5px;">
+                            <span class="fa fa-trash-o"></span>
+                        </button>
+                        <a href="/delete/{{item.ID}}" class=""></a>
                     </td>
                 </tr>
             </tbody>
@@ -36,4 +39,28 @@
 
     </div>
 
+</div>
+<!-- Modal for Delete Option-->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Are you sure to delete this product?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-danger" ng-click="confirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
 </div>
