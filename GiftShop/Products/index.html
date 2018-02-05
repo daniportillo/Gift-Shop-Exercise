@@ -1,0 +1,66 @@
+﻿<div class="container">
+    <br />
+    <div class="row">
+        <a href="#!/create" class="btn btn-outline-info">Create</a>
+    </div>
+    <br />
+    <div class="row table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in Products">
+                    <td><img class="img-list img-responsive" src="data:image/*;base64,{{item.image}}" alt="{{ item.name }}"></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.quantity}}</td>
+
+                    <td>${{item.price}} USD</td>
+                    <td>
+                        <a href="#!/edit/{{item.ID}}" class=""><span class="fa fa-edit"></span></a>
+                        <button type="button" class="btn btn-link" ng-click="delete(item.ID)" data-toggle="modal" data-target="#delete"  style="padding:0; margin-top: -5px;">
+                            <span class="fa fa-trash-o"></span>
+                        </button>
+                        <a href="/delete/{{item.ID}}" class=""></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+<!-- Modal for Delete Option-->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Are you sure to delete this product?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal" ng-click="confirmDelete()" >Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,14 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/jquery")
+    <link href="~/Content/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-fileinput/css/fileinput-rtl.min.css" rel="stylesheet" />
+    <script >
+    //    jQuery to collapse the navbar on scroll
+       
+    </script>
+
 </head>
 <body>
     <!-- Top navbar-->
@@ -17,7 +25,7 @@
                 <a href="#"><span class="fa fa-phone"></span>(555) 551-22-33</a>
                 <a href=""><span class="fa fa-envelope-o"></span>giftshop@example.com</a>
             </div>
-            <div class="col-sm-4 text-right">
+            <div class="col-sm-4 text-right social-links">
                 <a href="#"><span class="fa fa-facebook"></span></a>
                 <a href="#"><span class="fa fa-twitter"></span></a>
                 <a href="#"><span class="fa fa-instagram"></span></a>
@@ -34,32 +42,47 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-link">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                <li class="nav-link">@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                <li class="nav-link">@Html.ActionLink("Sign In", "Index", "Help", new { area = "" }, null)</li>
+                <li class="nav-link">@Html.ActionLink("Products", "Management", "Products", new { area = "" }, null)</li>
                 <li class="nav-link">@Html.ActionLink("Cart", "Index", "Help", new { area = "" }, null)</li>
+
             </ul>
             <span class="navbar-text">
 
             </span>
         </div>
     </nav>
-    <div class="">
+    <div>
+        <ng-view></ng-view>
         @RenderBody()
         <hr />
     </div>
 
+
     <footer>
-        <p>&copy; @DateTime.Now.Year - Gift Shop</p>
+        <div class="footer">
+            <p>&copy; @DateTime.Now.Year - Gift Shop</p>
+        </div>
+        
     </footer>
 
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/bundles/bootstrap");
+    <script src="~/Scripts/myApp.js"></script>
+    <script src="~/Scripts/productController.js"></script>
+    <script src="~/Scripts/Controllers/DetailsController.js"></script>
+    <script src="~/Scripts/fileinput.min.js"></script>
+
+
     <script>
         $(document).ready(function () {
-            $('.carousel').carousel()
+            $('.carousel').carousel();
+            $("#file-image").fileinput();
         });
+
     </script>
+
+
     @RenderSection("scripts", required: false)
 
 

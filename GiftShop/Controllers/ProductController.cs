@@ -4,7 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Web;
 using System.Web.Http;
+using System.Web.Http.Description;
 using GiftShop.Models;
 using Newtonsoft.Json;
 
@@ -39,11 +41,31 @@ namespace GiftShop.Controllers
         }
 
         /*Create a new product*/
-        [HttpPost]
+        /*[HttpPost]
         public void newProduct(product _product)
         {
             giftEntities.products.Add(_product);
             giftEntities.SaveChanges();
+        }*/
+        // POST api/product
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        [ResponseType(typeof(product))]
+        public HttpResponseMessage Post(product model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var startWorkingDay = JsonConvert.DeserializeObject<product>(HttpContext.Current.Request.Form["startWorkingDay"]);
+                giftEntities.products.Add(startWorkingDay);
+                giftEntities.SaveChanges();
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, startWorkingDay);
+                return response;
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         /* Update a product */
@@ -56,6 +78,7 @@ namespace GiftShop.Controllers
 
         /* Delete a product */
         [HttpDelete]
+        [Route("{id}")]
         public void deleteProduct(int id)
         {
             giftEntities.products.Remove(giftEntities.products.Find(id));

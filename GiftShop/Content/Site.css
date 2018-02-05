@@ -15,9 +15,10 @@ body{
     height: 80px;
     margin-bottom: 0;
     z-index: 100;
-    -webkit-box-shadow: 1px 20px 48px -9px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 20px 48px -9px rgba(0,0,0,0.75);
-    box-shadow: 1px 20px 48px -9px rgba(0,0,0,0.75);
+    -webkit-transition: position 3s linear;
+    -moz-transition: position 3s linear;
+    -o-transition: position 3s linear;
+    transition: position 3s linear;
 }
 
 .navbar-brand {
@@ -28,6 +29,10 @@ body{
 .nav-logo{
     max-width: 180px;
     max-height: 80px
+}
+
+.social-links .fa:hover{
+    color: #ffffff;
 }
 
 .navbar-giftShop .navbar-nav > li > a {
@@ -102,12 +107,6 @@ body{
     }
 
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
 
 /***********************************************
 *********************CAROUSEL*******************
@@ -222,11 +221,35 @@ textarea {
     position: absolute;
     bottom: 0;
 }
+/***********************************************
+*********** PRODUCT DETAILS PAGE ************
+/**********************************************/
+.product-details .card{
+    padding: 20px;
+}
+
+.product-title {
+    font-family: 'Amatic SC', cursive;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.product-cat{
+    font-size: 20px;
+}
+/***********************************************
+*********** PRODUCT MANAGEMENT PAGE ************
+/**********************************************/
+.img-list{
+    max-width: 100px;
+}
+
 /* FOOTER*/
-footer {
+.footer {
     background-color: #333333;
     color: #fff;
     padding: 40px 70px;
+    margin-bottom: -25px;
 }
 
 
@@ -245,3 +268,4 @@ footer {
         margin-top: -8px;
     }
 }
+
