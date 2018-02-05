@@ -20,7 +20,7 @@
                 <a href="#"><span class="fa fa-phone"></span>(555) 551-22-33</a>
                 <a href=""><span class="fa fa-envelope-o"></span>giftshop@example.com</a>
             </div>
-            <div class="col-sm-4 text-right">
+            <div class="col-sm-4 text-right social-links">
                 <a href="#"><span class="fa fa-facebook"></span></a>
                 <a href="#"><span class="fa fa-twitter"></span></a>
                 <a href="#"><span class="fa fa-instagram"></span></a>
@@ -54,14 +54,18 @@
 
 
     <footer>
-        <p>&copy; @DateTime.Now.Year - Gift Shop</p>
+        <div class="footer">
+            <p>&copy; @DateTime.Now.Year - Gift Shop</p>
+        </div>
+        
     </footer>
 
 
 
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap");
     <script src="~/Scripts/myApp.js"></script>
     <script src="~/Scripts/productController.js"></script>
+    <script src="~/Scripts/Controllers/DetailsController.js"></script>
     <script src="~/Scripts/fileinput.min.js"></script>
 
 
@@ -70,7 +74,7 @@
             $('.carousel').carousel();
             $("#file-image").fileinput();
         });
-       
+
     </script>
     @RenderSection("scripts", required: false)
 

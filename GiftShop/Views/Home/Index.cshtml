@@ -95,11 +95,12 @@
 
             <div class="row d-flex flex-wrap justify-content-center">
                 <div class="card animate-repeat" ng-repeat="product in Products| filter:query | orderBy: '-ID' | filter :sortCategory">
-                    <a href="/product-details/{{product.ID}}">
-                        <img class="card-img-top img-responsive" src="data:image/*;base64,{{product.image}}" alt="{{ product.name }}">
+                    <a href="@Url.Action("Product", "Home")/{{product.ID}}">
+                        <img class="card-img-top img-responsive" src="data:image/gif;base64,{{product.image}}" alt="{{ product.name }}">
                         <div class="card-body">
                             <p class="card-text">{{ product.name }}</p>
                             <div class="card-bottom d-flex">
+
                                 <p>${{product.price}}</p>
                             </div>
                         </div>
@@ -109,7 +110,7 @@
             </div>
 
         </div>
-    </d iv>
+        </d iv>
 
 </section>
 

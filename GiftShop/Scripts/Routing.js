@@ -43,7 +43,6 @@
 
         $scope.confirmDelete = function () {
             $http.delete('/api/product/' + $scope.idProduct).then(successDelCallback, errorCallback);
-           // $location.reload();
             $location.path('#!/list');
         }
 
@@ -63,7 +62,7 @@
 
     }]).controller("EditController", ['$scope', '$filter', '$http', '$routeParams', '$location',
         function ($scope, $filter, $http, $routeParams, $location) {
-
+            $scope.id = '';
             if ($routeParams.id) {
                 $scope.title = "Edit Product";
                 $scope.id = $routeParams.id;
@@ -97,7 +96,8 @@
                     price: $scope.price
                 }
                 // Create new product 
-                if ($scope.ID == null) {
+                if ($scope.id == 0) {
+                    console.log($scope.id)
                     console.log(obj);
                     $http.post('/api/product/', obj).then(successCallback, errorCallback);
 
@@ -112,6 +112,7 @@
                         headers: { 'Content-Type': 'application/json' }
                     }).then(successCallback, errorCallback);
                    return $scope.promsie;*/
+                    $http.put('/api/product/', obj).then(successCallback, errorCallback);
                 }
 
                 
@@ -123,7 +124,7 @@
                 }
                 function errorCallback(error) {
                     alert('An error has ocurred, please try again');
-                    //console.log(error);
+                    console.log(error);
                     $scope.error = "An error has ocurred.";
                 }
 
