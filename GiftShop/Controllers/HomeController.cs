@@ -14,9 +14,5 @@ namespace GiftShop.Controllers
 
             return View();
         }
-        public ActionResult RoutePart()
-        {
-            return View();
-        }
     }
 }

@@ -219,6 +219,14 @@ textarea {
     position: absolute;
     bottom: 0;
 }
+
+/***********************************************
+*********** PRODUCT MANAGEMENT PAGE ************
+/**********************************************/
+.img-list{
+    max-width: 100px;
+}
+
 /* FOOTER*/
 footer {
     background-color: #333333;

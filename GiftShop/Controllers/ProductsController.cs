@@ -8,8 +8,11 @@ namespace GiftShop.Controllers
 {
     public class ProductsController : Controller
     {
-        // GET: Products
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Management()
         {
             return View();
         }

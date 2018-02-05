@@ -1,71 +1,39 @@
 ﻿<div class="container">
-
+    <br />
     <div class="row">
-        <a href="#/create" class="btn btn-info">Create</a>
+        <a href="#!/create" class="btn btn-outline-info">Create</a>
     </div>
-
-    <div class="row">
-        <table class="table">
+    <br />
+    <div class="row table-responsive">
+        <table class="table table-hover">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                <tr ng-repeat="item in Products">
+                    <td><img class="img-list img-responsive" src="data:image/*;base64,{{item.image}}" alt="{{ item.name }}"></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.quantity}}</td>
+
+                    <td>${{item.price}} USD</td>
+                    <td>
+                        <a href="#!/edit/{{item.ID}}" class=""><span class="fa fa-edit"></span></a>
+                        <a href="/delete/{{item.ID}}" class=""><span class="fa fa-trash-o"></span></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
 </div>
